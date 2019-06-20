@@ -19,7 +19,7 @@ export default {
       todos: [
         {
           id: 1,
-          title: "ToDo eins",
+          title: "ToDo einss",
           completed: false
         },
         {
