@@ -8,6 +8,7 @@
 <script> 
 
 import Todos from "./components/Todos";
+import { eventbus } from "./eventbus";
 
 export default {
   name: 'app',

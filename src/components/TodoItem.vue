@@ -1,19 +1,30 @@
 <template>
-    <div class="todo-item" vbind-class="{is-complete}">
+    <div class="todo-item">
+
         <div class="title">
-            {{todo.id}} &nbsp; {{todo.title}}
+            <input type="checkbox" v-model="todo.completed"> {{todo.id}} &nbsp; {{todo.title}}
 
         </div>
 
-        <button class="button">Remove</button>
-        <input type="checkbox" v-model="todo.completed">
+        <button class="del" @click="delTodo">x</button>
     </div>
 </template>
 
 <script>
+import eventbus from '../eventbus';
+
+
 export default {
     name: "TodoItem",
-    props: { todo: { type: Object, required: true } }
+    props: { todo: { type: Object, required: true } },
+    methods: {
+        delTodo() {
+            console.log("emitting message on the bus... Methode delItem");
+
+            eventbus.$emit('todo-deleted', this.todo.id);
+
+        }
+    }
 }
 </script>
 
@@ -26,9 +37,6 @@ export default {
     overflow: hidden;
 }
 
-.is-complete {
-    text-decoration: line-through;
-}
 
 .del {
     background: #ff0000;
@@ -56,7 +64,7 @@ export default {
 }
 
 input {
-    float: right;
+    text-anchor: left;
 }
 </style>
 

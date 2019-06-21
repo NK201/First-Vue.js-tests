@@ -7,10 +7,10 @@
 
     </div>
 
-    <input type="text" v-model="inputText">
+    <input type="text" v-model="inputText" placeholder="Add ToDo...">
 
     <button class="button" @click="addItem">
-      CLICK MICH
+      Add
     </button>
 
   </div>
@@ -18,6 +18,7 @@
 
 <script>
 import TodoItem from './TodoItem';
+import eventbus from '../eventbus';
 
 
 export default {
@@ -75,23 +76,33 @@ export default {
         completed: false
       }
     ]
+  },
+  created() {
+    eventbus.$on('todo-deleted', (data) => {
+      // console.log(data);
+
+      this.todos = this.todos.filter(todo => todo.id !== data);
+
+
+
+    })
   }
 }
+
 </script>
 
 <style scoped>
 .button {
   padding: 8px 16px;
   color: white;
-  background-color: blue;
+  background-color: #555;
   border: none;
   border-radius: 6px;
   box-shadow: 0 0 10px -1px rgba(0, 0, 0, 0.5);
-  cursor: crosshair;
 }
 
 .button:hover {
-  background-color: blueviolet;
+  background-color: #666;
   box-shadow: 0 2px 10px -1px rgba(0, 0, 0, 0.9);
 }
 </style>
