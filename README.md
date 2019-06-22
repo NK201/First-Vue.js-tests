@@ -1,5 +1,5 @@
 Die ist mein erster Versuch mit dem Vue.js Framwork.
-Ziel war es eine Todo-List zu erstellen, bei der dynamisch Elemente hinzugefügt und gelöscht werden.
+Ziel war es eine Todo-List zu erstellen, bei der dynamisch Elemente hinzugefï¿½gt und gelï¿½scht werden.
 
 
 # Todo-Liste
