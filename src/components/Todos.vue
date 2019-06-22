@@ -3,23 +3,18 @@
     <h1>Todos</h1>
 
     <div v-bind:key="index" v-for="(todo,index) in todos">
-      <TodoItem v-bind:todo="todo" />
-
+      <TodoItem v-bind:todo="todo"/>
     </div>
 
     <input type="text" v-model="inputText" placeholder="Add ToDo...">
 
-    <button class="button" @click="addItem">
-      Add
-    </button>
-
+    <button class="button" @click="addItem">Add</button>
   </div>
 </template>
 
 <script>
-import TodoItem from './TodoItem';
-import eventbus from '../eventbus';
-
+import TodoItem from "./TodoItem";
+import eventbus from "../eventbus";
 
 export default {
   name: "Todos",
@@ -28,35 +23,28 @@ export default {
   },
   data() {
     return {
-      todos: [
-
-      ],
+      todos: [],
       inputText: null
-    }
+    };
   },
   methods: {
     // METHODEN
     // --------------------
 
     addItem() {
-
       // get max ID in array
       let max = 0;
       this.todos.forEach(element => {
         if (max <= element.id) {
           max = element.id + 1;
         }
-
       });
 
-
       if (this.inputText != null) {
-        this.todos.push({ id: max, title: this.inputText, completed: false })
+        this.todos.push({ id: max, title: this.inputText, completed: false });
         this.inputText = null;
       }
-
     }
-
   },
   beforeMount() {
     this.todos = [
@@ -75,20 +63,16 @@ export default {
         title: "ToDo drei",
         completed: false
       }
-    ]
+    ];
   },
   created() {
-    eventbus.$on('todo-deleted', (data) => {
+    eventbus.$on("todo-deleted", data => {
       // console.log(data);
 
       this.todos = this.todos.filter(todo => todo.id !== data);
-
-
-
-    })
+    });
   }
-}
-
+};
 </script>
 
 <style scoped>

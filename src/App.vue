@@ -1,27 +1,30 @@
 <template>
   <div id="app">
-    <Todos />
+    <Header/>
+    <Todos/>
+    <Footer/>
     <!-- <Todos /> -->
   </div>
 </template>
 
-<script> 
-
+<script>
+import Header from "./components/layout/Header";
 import Todos from "./components/Todos";
-import { eventbus } from "./eventbus";
+import Footer from "./components/layout/Footer";
+//import { eventbus } from "./eventbus";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
     //HelloWorld
-    Todos
+    Header,
+    Todos,
+    Footer
   },
   data() {
-    return {
-
-    }
+    return {};
   }
-}
+};
 </script>
 
 <style>
