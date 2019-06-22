@@ -5,7 +5,6 @@
     <Header/>
     <Todos/>
     <Footer/>
-    <!-- <Todos /> -->
   </div>
 </template>
 
@@ -21,7 +20,6 @@ import Footer from "./components/layout/Footer";
 export default {
   name: "app",
   components: {
-    //HelloWorld
     Header,
     Todos,
     Footer
@@ -43,5 +41,6 @@ export default {
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.4;
+  text-decoration: none;
 }
 </style>

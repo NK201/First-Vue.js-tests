@@ -18,14 +18,14 @@ export default {
   props: { todo: { type: Object, required: true } },
   methods: {
     delTodo() {
-      console.log("emitting message on the bus... Methode delItem");
+      //console.log("emitting message on the bus... Methode delItem");
 
       // make api delete call
 
       axios
         .delete("https://jsonplaceholder.typicode.com/todos/${this.todo.id}")
         .then()
-        .catch(err => console.log(err));
+        .catch();
       eventbus.$emit("todo-deleted", this.todo.id);
     }
   }

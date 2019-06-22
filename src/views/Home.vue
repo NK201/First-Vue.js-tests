@@ -1,18 +1,46 @@
+
+
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <Header/>
+    <Todos/>
+    <Footer/>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+// Test with JSON API
+// https://jsonplaceholder.typicode.com/todos
+
+import Header from "../components/layout/Header";
+import Todos from "../components/Todos";
+import Footer from "../components/layout/Footer";
+//import { eventbus } from "./eventbus";
 
 export default {
-  name: 'home',
+  name: "home",
   components: {
-    HelloWorld
-  }
-}
+    Header,
+    Todos,
+    Footer
+  },
+  data() {
+    return {};
+  },
+  created() {}
+};
 </script>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+  text-decoration: none;
+}
+</style>

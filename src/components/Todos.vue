@@ -48,12 +48,13 @@ export default {
 
       // make api post
 
-      axios
+      /* axios
         .post("https://jsonplaceholder.typicode.com/todos", {
           title,
           completed
         })
-        .catch(err => console.log(err));
+        .then()
+        .catch(); */
     }
   },
   beforeMount() {
@@ -85,7 +86,7 @@ export default {
     axios
       .get("https://jsonplaceholder.typicode.com/todos?_limit=5")
       .then(res => (this.todos = res.data))
-      .catch(err => console.log(err));
+      .catch();
   }
 };
 </script>
