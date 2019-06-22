@@ -15,6 +15,7 @@
 <script>
 import TodoItem from "./TodoItem";
 import eventbus from "../eventbus";
+import axios from "axios";
 
 export default {
   name: "Todos",
@@ -44,10 +45,19 @@ export default {
         this.todos.push({ id: max, title: this.inputText, completed: false });
         this.inputText = null;
       }
+
+      // make api post
+
+      axios
+        .post("https://jsonplaceholder.typicode.com/todos", {
+          title,
+          completed
+        })
+        .catch(err => console.log(err));
     }
   },
   beforeMount() {
-    this.todos = [
+    /* this.todos = [
       {
         id: 1,
         title: "ToDo eins",
@@ -63,14 +73,19 @@ export default {
         title: "ToDo drei",
         completed: false
       }
-    ];
+    ]; */
   },
   created() {
+    // Listen on eventbus
     eventbus.$on("todo-deleted", data => {
-      // console.log(data);
-
       this.todos = this.todos.filter(todo => todo.id !== data);
     });
+
+    // fill with data from api
+    axios
+      .get("https://jsonplaceholder.typicode.com/todos?_limit=5")
+      .then(res => (this.todos = res.data))
+      .catch(err => console.log(err));
   }
 };
 </script>

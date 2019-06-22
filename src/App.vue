@@ -1,3 +1,5 @@
+
+
 <template>
   <div id="app">
     <Header/>
@@ -8,6 +10,9 @@
 </template>
 
 <script>
+// Test with JSON API
+// https://jsonplaceholder.typicode.com/todos
+
 import Header from "./components/layout/Header";
 import Todos from "./components/Todos";
 import Footer from "./components/layout/Footer";
@@ -23,7 +28,8 @@ export default {
   },
   data() {
     return {};
-  }
+  },
+  created() {}
 };
 </script>
 
