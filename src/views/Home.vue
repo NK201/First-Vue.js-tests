@@ -1,10 +1,8 @@
 
 
 <template>
-  <div id="app">
-    <Header/>
+  <div>
     <Todos/>
-    <Footer/>
   </div>
 </template>
 
@@ -12,22 +10,17 @@
 // Test with JSON API
 // https://jsonplaceholder.typicode.com/todos
 
-import Header from "../components/layout/Header";
 import Todos from "../components/Todos";
-import Footer from "../components/layout/Footer";
-//import { eventbus } from "./eventbus";
 
 export default {
   name: "home",
   components: {
-    Header,
-    Todos,
-    Footer
+    Todos
   },
   data() {
     return {};
   },
-  created() {}
+  created() { }
 };
 </script>
 

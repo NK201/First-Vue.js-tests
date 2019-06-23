@@ -1,5 +1,7 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div>
+    <h1>Die wunderschoene About-Page
+    </h1>
+    <p>Kleiner API-Test + Routing + eventbus + general Vue.js-Framework</p>
   </div>
 </template>

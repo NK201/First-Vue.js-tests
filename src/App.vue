@@ -3,7 +3,7 @@
 <template>
   <div id="app">
     <Header/>
-    <Todos/>
+    <router-view></router-view>
     <Footer/>
   </div>
 </template>
@@ -15,19 +15,19 @@
 import Header from "./components/layout/Header";
 import Todos from "./components/Todos";
 import Footer from "./components/layout/Footer";
-//import { eventbus } from "./eventbus";
+import home from "./views/Home"
 
 export default {
   name: "app",
   components: {
+    home,
     Header,
-    Todos,
     Footer
   },
   data() {
     return {};
   },
-  created() {}
+  created() { }
 };
 </script>
 
