@@ -35,7 +35,7 @@ export default {
           "https://images-api.nasa.gov/search?q=" + query + "&media_type=image"
         )
         .then(response => {
-          console.log(response.data.collection.items);
+          //console.log(response.data.collection.items);
           this.results = response.data.collection.items;
         });
     }
