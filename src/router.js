@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
 import About from './views/About';
-import Testpage from './views/Testpage';
+import Nasa from './views/Nasa';
 
 Vue.use(Router);
 
@@ -18,9 +18,9 @@ export default new Router({
             component: About
         },
         {
-            path: '/testpage',
-            name: 'testpage',
-            component: Testpage
+            path: '/nasa',
+            name: 'nasa',
+            component: Nasa
         }
 
     ]

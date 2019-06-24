@@ -13,21 +13,18 @@
 // https://jsonplaceholder.typicode.com/todos
 
 import Header from "./components/layout/Header";
-import Todos from "./components/Todos";
 import Footer from "./components/layout/Footer";
-import home from "./views/Home"
 
 export default {
   name: "app",
   components: {
-    home,
     Header,
     Footer
   },
   data() {
     return {};
   },
-  created() { }
+  created() {}
 };
 </script>
 
